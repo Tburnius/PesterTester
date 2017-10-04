@@ -1,0 +1,55 @@
+{
+    "manifestVersion": 1,
+    "id": "pesterTester",
+    "version": "0.1.0",
+    "name": "Pester Tester",
+    "publisher": "Taylor Hilburn",
+    "description": "Pester Tester Extension for VSTS and TFS.  Used to run Pester tests for Powershell projects as part of a CI/CD pipeline.",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "icon.png"
+    },
+    "categories": [
+        "Test"
+    ],
+    "content": {
+        "details": {
+            "path": "readme.md"
+        }
+    },
+    "links": {
+        "getstarted": {
+            "uri": "https://github.com/Tburnius/PesterTester"
+        },
+        "support": {
+            "uri": "https://github.com/Tburnius/PesterTester"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/Tburnius/PesterTester"
+    },
+    "contributions": [
+        {
+            "id": "pesterTester",
+            "type": "ms.vss-distributed-task.task",
+            "description": "Runs (a) specified Pester test file(s) to assess code coverage of another file as part of the CI/CD pipeline for Powershell projects.",
+            "targets": [
+                "ms.vss-distributed-task.task"
+            ],
+            "properties": {
+                "name": "Pester Test task."
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "PesterTester",
+            "addressable": true
+        }
+    ]
+}

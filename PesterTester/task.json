@@ -1,0 +1,60 @@
+{
+    "id":"3fb79648-7d41-4134-809c-0c0d08db948d",
+    "name":"PesterTester",
+    "friendlyName":"Pester Tester",
+    "description":"Invoke-Pester to run Powershell unit tests and mandate code coverage",
+    "helpMarkDown":"Uses the latest available Pester version to run Powershell unit tests and mandate code coverage",
+    "category":"Test",
+    "visibility":[
+        "Build",
+        "Release"
+    ],
+    "demands":[],
+    "author":"Taylor Hilburn",
+    "version":{
+        "Major":0,
+        "Minor":1,
+        "Patch":0
+    },
+    "minimumAgentVersion":"1.95.0",
+    "instanceNameFormat":"Pester Tester",
+    "inputs": [
+        {
+            "name": "testPath",
+            "type": "string",
+            "label": "Path to the test Script(s):",
+            "defaultValue": "$(Build.SourcesDirectory)",
+            "required":true,
+            "helpMarkDown":"The path of the pester test script file(s)"
+        },
+        {
+            "name": "testOutputPath",
+            "type": "string",
+            "label": "Path to Test Output:",
+            "defaultValue": "$(Build.SourcesDirectory)\\results.xml",
+            "required":true,
+            "helpMarkDown": "The Path that should be assigned to the test results file the extension generates"
+        },
+        {
+            "name": "codeCoverage",
+            "type": "string",
+            "label": "Code Coverage File Path:",
+            "defaultValue": "$(Build.SourcesDirectory)\\",
+            "required":false,
+            "helpMarkDown": "The path of the file that we'd like to assess code coverage of"
+        },
+        {
+            "name": "minimumCoverage",
+            "type": "string",
+            "label": "Minimum Code Coverage %:",
+            "defaultValue": "10",
+            "required":false,
+            "helpMarkDown": "The percentage of code coverage under which the extension will fail the build/release"
+        }
+    ],
+    "execution": {
+        "Powershell3": {
+            "target": "Main.ps1"
+        }
+    }
+}
